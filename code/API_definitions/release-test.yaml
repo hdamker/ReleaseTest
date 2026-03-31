@@ -20,7 +20,7 @@ servers:
         description: API root
 tags:
   - name: Status
-paths:  
+paths:   
   /status:
     get:
       operationId: getStatus
