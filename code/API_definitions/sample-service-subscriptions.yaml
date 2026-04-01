@@ -19,7 +19,7 @@ externalDocs:
   description: Product documentation at CAMARA
   url: https://github.com/camaraproject/ReleaseTest
 servers:
-  - url: "{apiRoot}/api-name/vwip"
+  - url: "{apiRoot}/sample-service-subscriptions/vwip"
     variables:
       apiRoot:
         default: http://localhost:9091
@@ -618,4 +618,3 @@ components:
           properties:
             protocolSettings:
               $ref: "../common/CAMARA_event_common.yaml#/components/schemas/NATSSettings"
-
