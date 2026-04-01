@@ -40,6 +40,11 @@ apis:
       - hdamker-bot
   - api_name: sample-service
     target_api_version: 0.1.0
-    target_api_status: alpha
+    target_api_status: rc
+    main_contacts:
+      - hdamker-bot
+  - api_name: sample-service-subscriptions
+    target_api_version: 0.1.0
+    target_api_status: rc
     main_contacts:
       - hdamker-bot
