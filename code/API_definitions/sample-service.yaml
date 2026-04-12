@@ -20,8 +20,7 @@ info:
   x-camara-commonalities: 0.7.0
 externalDocs:
   description: Product documentation at CAMARA
-  url: https://github.com/camaraproject/{apiRepository}
-  # {apiRepository} MUST be replaced by the CAMARA API Repository name where the API specification is hosted.
+  url: https://github.com/camaraproject/ReleaseTest
 servers:
   - url: "{apiRoot}/sample-service/vwip"
     variables:
