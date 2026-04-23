@@ -8,11 +8,11 @@
 # ReleaseTest
 
 > [!CAUTION]
-> This repository is exclusively used for testing the [CAMARA release automation](https://github.com/camaraproject/tooling/tree/release-automation/release_automation) workflow ([tooling#72](https://github.com/camaraproject/tooling/issues/72)). It is not an actual API repository. Issues, releases, and branches may be created and deleted at any time without notice.
+> This repository is used for testing the [CAMARA release management tooling](https://github.com/camaraproject/tooling) — both for manual end-to-end tests and as the target for automated regression canaries. It is not an actual API repository. After any manual tests, leave the repository in a `planned` state with an open Release Issue so the next canary run passes its pre-check.
 
 ## Scope
 
-Test repository for end-to-end validation of the automated release workflow. Contains a minimal API stub to exercise the full release lifecycle:
+Test repository for end-to-end validation of the automated release workflow, and target for the Validation Regression and Release Automation Regression canaries running from [camaraproject/tooling](https://github.com/camaraproject/tooling). Carries the Commonalities sample API templates under `code/API_definitions/` as test fixtures, which exercise the full release lifecycle:
 
 * Sync Release Issue from `release-plan.yaml`
 * Create snapshot and release-review branch
@@ -40,6 +40,17 @@ Test repository for end-to-end validation of the automated release workflow. Con
 
 _The above section is automatically synchronized by CAMARA project-administration._
 <!-- CAMARA:RELEASE-INFO:END -->
+
+## Regression canary target
+
+This repository is the target for the **Validation Regression** and **Release Automation Regression** canaries in [camaraproject/tooling](https://github.com/camaraproject/tooling), which fire on every push to the `validation-framework` branch.
+
+State to preserve:
+
+* **`regression/r4.1-*` branches are permanent** — each carries a `.regression/regression-expected.yaml` fixture. Do not rename or delete.
+* **After any manual tests, leave the repository in a valid `planned` state with an open Release Issue** — otherwise the next RA canary run fails its pre-check.
+
+Side-effect: each `/discard-snapshot` (canary or manual) leaves a `release-review/*-preserved` branch behind. These are harmless historical artifacts and are not swept automatically.
 
 ## Contributing
 
